@@ -31,6 +31,12 @@ public class AccountCreationPageTest {
 	
 	}
 	
+	public void loginTest() throws SQLException, IOException
+	{
+		Common.validateLogo();
+		Common.login();
+		Common.verifyUsername();
+	}
 	
 	
 	

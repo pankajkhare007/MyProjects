@@ -15,7 +15,7 @@ import org.testng.ITestResult;
  *
  */
 public class ListenerClass extends WebDriverHelper implements ITestListener, ISuiteListener {
-
+	public static int row;
 	public void onStart(ISuite suite) {
 
 		try {
