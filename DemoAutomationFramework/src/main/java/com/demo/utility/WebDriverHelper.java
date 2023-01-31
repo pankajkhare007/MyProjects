@@ -8,8 +8,11 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
+
+import com.demo.objects.CommonObjects;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 
@@ -39,7 +42,7 @@ public class WebDriverHelper {
 		}
 		driver.manage().window().maximize();
 		driver.get(url);
-	
+		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
 	}
 	
 	public static void waitForElement(String sObj, int seconds)
@@ -49,6 +52,33 @@ public class WebDriverHelper {
 		wait.until(ExpectedConditions.presenceOfElementLocated(by));
 	}
 	
+	public static void scrollElementIntoView(WebElement ele)
+	{
+		
+		Actions actions = new Actions(driver);
+		actions.moveToElement(ele);
+		actions.perform();
+	}
 	
+	public static boolean isElementPresent(String sObj)
+	{
+		boolean isEle=false;
+		try
+		{
+			WebElement elePopup=WebControls.getWebElement(sObj);
+			if(elePopup.isDisplayed())
+			{
+				if(elePopup.isEnabled())
+				{
+					isEle=true;
+				}
+			}
+		}
+		catch(Exception e)
+		{
+			isEle=false;
+		}
+		return isEle;
+	}
 
 }

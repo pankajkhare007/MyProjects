@@ -8,13 +8,24 @@ import java.util.Properties;
 
 public class ReadPropertiesFile {
 	public static Properties prop;
-	
-	public static void loadConfig() throws IOException
+	public static FileInputStream bis;
+	public static void loadConfig() 
 	{
 		String filePath=System.getProperty("user.dir")+"\\Configuration\\Config.properties";
-		FileInputStream bis= new FileInputStream(filePath);
+		
+		try {
+			bis = new FileInputStream(filePath);
+		} catch (FileNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		prop = new Properties();
-		prop.load(bis);
+		try {
+			prop.load(bis);
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 	}
 
 }

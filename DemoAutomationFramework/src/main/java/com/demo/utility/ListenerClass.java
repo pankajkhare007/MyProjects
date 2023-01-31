@@ -18,12 +18,7 @@ public class ListenerClass extends WebDriverHelper implements ITestListener, ISu
 	public static int row;
 	public void onStart(ISuite suite) {
 
-		try {
-			ReadPropertiesFile.loadConfig();
-		} catch (IOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
+		ReadPropertiesFile.loadConfig();
 		ExtentManager.setExtent();
 	}
 
@@ -42,7 +37,7 @@ public class ListenerClass extends WebDriverHelper implements ITestListener, ISu
 		  try { 
 			  ExtentManager.verificationStep("pass", result.getMethod().getMethodName()+" got passed"); 
 		  } 
-		  catch (IOException e) {
+		  catch (Exception e) {
 			  e.printStackTrace();
 		  }
 		
@@ -54,7 +49,7 @@ public class ListenerClass extends WebDriverHelper implements ITestListener, ISu
 		 try { 
 			  ExtentManager.verificationStep("fail", result.getMethod().getMethodName()+" got failed"); 
 		  } 
-		  catch (IOException e) {
+		  catch (Exception e) {
 			  e.printStackTrace();
 		  }
 		driver.close();

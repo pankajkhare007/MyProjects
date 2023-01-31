@@ -57,7 +57,7 @@ public class WebControls extends WebDriverHelper {
 		return by;
 	}
 	
-	public static void setValueOnWebEdit(String sObject,String sText,String sReportText) throws IOException
+	public static void setValueOnWebEdit(String sObject,String sText,String sReportText) 
 	{
 		WebElement obj = getWebElement(sObject);
 		if(obj!=null)
@@ -85,7 +85,7 @@ public class WebControls extends WebDriverHelper {
 		
 	}
 	
-	public static void clickOnWebButton(String sObject,String sReportText) throws IOException
+	public static void clickOnWebButton(String sObject,String sReportText) 
 	{
 		WebElement obj = getWebElement(sObject);
 		if(obj!=null)
