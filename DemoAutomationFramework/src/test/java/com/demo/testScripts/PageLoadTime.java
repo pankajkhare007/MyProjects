@@ -30,7 +30,7 @@ public class PageLoadTime {
 		for(int i=0;i<excelData.size();i++)
 		{
 			WebControls.setValueOnWebEdit(CommonObjects.editUsername, excelData.get(i).get("User"), "Username");
-			WebControls.setValueOnWebEdit(CommonObjects.editPassword,"$occer1872", "Password");
+			WebControls.setValueOnWebEdit(CommonObjects.editPassword,"Ro$ewar1461", "Password");
 			WebControls.clickOnWebButton(CommonObjects.btnSignIn,"Sign button");
 			if(WebDriverHelper.isElementPresent(CommonObjects.continuePopup))
 			{

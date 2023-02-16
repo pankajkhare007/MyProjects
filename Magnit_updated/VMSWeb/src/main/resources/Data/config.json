@@ -1,0 +1,35 @@
+{
+  "Environment": "Prodtest2",
+  "Browser": "CH",
+  "NewSession": "true",
+  "Environments": [
+    {
+
+      "enviorment": "Prodtest2",
+      "url": "https://prodtest2.prounlimited.com",
+      "dburl": "jdbc:oracle:thin:@//sgdqracscan.pro-unlimited.dev:1521/istwand",
+      "dbusername":"pw90prod",
+      "dbpassword":"istpw90prd",
+      "driverclassname":"oracle.jdbc.OracleDriver"
+     
+    },
+
+    {
+
+      "enviorment": "qawand",
+      "url": "https://qawand.dev.pro-unlimited.com",
+      "dburl": "jdbc:oracle:thin:@//sgdqdb07.dev.pro-unlimited.com:1521/qawand",
+      "dbusername":"pw90prod",
+      "dbpassword":"qWwanD90",
+      "driverclassname":"oracle.jdbc.OracleDriver"
+    },
+    
+     {
+      "Name": "SMOKE",
+      "VMSEnvironmentUS": "QAVENUS",
+      "VMSUrlUS": "https://qavenus.workforcelogiq.com/login/login",
+      "VMSConnectionStringUS": "Server=tcp:qa-sqlmi-eastus.e796c9768f7f.database.windows.net,1433;Initial Catalog=qa-sqldb-jupiter-eastus;Persist Security Info=False;User ID=automation-user-vms-eastus;Password=jyu+-g8HpDY3mU3C;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;"
+
+    }
+  ]
+}
